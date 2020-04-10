@@ -1,0 +1,104 @@
+.heading-2 {
+  font-size: 3rem;
+
+  @media only screen and (max-width: $bp-mobile) {
+    font-size: 4rem;
+  }
+}
+
+.heading-4 {
+  font-size: 2rem;
+
+  @media only screen and (max-width: $bp-mobile) {
+    font-size: 3rem;
+  }
+}
+.heading-6 {
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}
+.paragraph {
+  font-size: 1.4rem;
+  color: $color-white;
+  font-family: $font-secondary;
+
+  @media only screen and (max-width: $bp-mobile) {
+    font-size: 2rem;
+  }
+
+  &--small {
+    font-size: 1.1rem !important;
+    font-family: $font-secondary !important;
+    @media only screen and (max-width: $bp-mobile) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &--smallest {
+    font-size: 1rem;
+    @media only screen and (max-width: $bp-mobile) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.btn {
+  padding: 1.5rem 4rem; /* top-bottom - 15px || left-right - 40px */
+  display: inline-block;
+  width: fit-content;
+  border-radius: 10rem;
+  font-family: $font-secondary;
+  background-image: linear-gradient(
+    to right,
+    $color-gradient-1,
+    $color-gradient-2
+  );
+  font-weight: 700;
+  color: $color-white;
+  position: relative;
+  font-size: 1.6rem;
+  box-shadow: $shadow-light;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $shadow-dark;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn2 {
+  display: flex;
+
+  border: none;
+  color: $color-gradient-1;
+  font-family: $font-secondary;
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border-bottom: 0.2rem solid $color-gradient-1;
+  transition: all 0.5s;
+  &__link {
+    text-decoration: none;
+  }
+
+  &__img {
+    transition: all 0.3s;
+    margin-left: 0.5rem;
+  }
+
+  &:hover &__img {
+    margin-left: 1rem;
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}

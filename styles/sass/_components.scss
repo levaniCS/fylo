@@ -1,0 +1,348 @@
+///////////////
+// HEADER
+.header {
+  padding: 4rem 5rem;
+  background-color: $color-blue-dark-intro;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 11rem;
+    }
+
+    .list {
+      list-style: none;
+      display: flex;
+      .item {
+        padding: 1rem 3rem;
+        font-family: $font-secondary;
+        white-space: nowrap;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: $color-blue-dark-main;
+        }
+      }
+
+      & > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__center {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    & > * {
+      margin-bottom: 2rem;
+      width: 50rem;
+    }
+
+    .introimg {
+      width: 50rem;
+    }
+
+    @media only screen and (max-width: $bp-mobile) {
+      & > * {
+        margin-bottom: 3rem;
+        width: 90%;
+      }
+
+      .introimg {
+        width: 90%;
+      }
+    }
+  }
+
+  &__curvy {
+    width: inherit;
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+//////////////
+//  MAIN
+.main {
+  padding: 8rem 5rem 0 5rem;
+  background-color: $color-blue-dark-main;
+
+  display: grid;
+  gap: 15rem;
+  grid-template-rows: min-content min-content min-content 1fr;
+
+  &__grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 35rem);
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
+    @media only screen and (max-width: $bp-mobile) {
+      grid-template-columns: 1fr;
+    }
+
+    .grid-item {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+
+      gap: 1.8rem;
+
+      .img {
+        width: 6rem;
+      }
+    }
+  }
+
+  &__productive {
+    display: flex;
+    padding: 0 4rem;
+
+    .img {
+      width: 45%;
+    }
+    .info {
+      width: 50%;
+      margin-left: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      //  text-align: center;
+
+      & > * {
+        margin-bottom: 2rem;
+        justify-self: center;
+        align-self: flex-start;
+      }
+    }
+
+    @media only screen and (max-width: $bp-mobile) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .img {
+        width: 90%;
+      }
+      .info {
+        width: 80%;
+
+        & > * {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+
+  &__reviews {
+    margin: 0 8rem;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    @media only screen and (max-width: $bp-mobile) {
+      grid-template-columns: 1fr;
+
+      transform: translateY(5rem);
+      width: 70%;
+      justify-self: center;
+      align-items: center;
+    }
+
+    .quotes {
+      position: absolute;
+      z-index: 100;
+      top: -3rem;
+      left: -2rem;
+    }
+
+    .review {
+      position: relative;
+      z-index: 200;
+      background-color: $color-blue-dark-testimonals;
+      box-shadow: $shadow-light;
+      border-radius: 0.5rem;
+      padding: 4rem 3rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.4s;
+      cursor: pointer;
+
+      &__user {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        .user-pic {
+          width: 4rem;
+          border-radius: 2rem;
+        }
+        .user-info {
+          margin-left: 1rem;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__box {
+    justify-self: center;
+    transform: translateY(40%);
+    background-color: $color-blue-dark-testimonals;
+    box-shadow: $shadow-dark;
+    padding: 4rem 5rem;
+    height: fit-content;
+    width: 80rem;
+    border-radius: 0.5rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-rows: repeat(3, min-content);
+    gap: 2rem;
+
+    .input {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      justify-content: space-around;
+      &__area {
+        width: 40rem;
+        padding: 2rem 3rem;
+        border: none;
+        border-radius: 50rem;
+        margin-right: 2rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $bp-mobile) {
+      width: 90%;
+      .input {
+        grid-template-columns: 1fr;
+        width: 90%;
+
+        margin: 0 auto;
+        justify-items: center;
+
+        &__area {
+          margin: 0 auto;
+          width: 90%;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}
+
+//////////////
+//  FOOTER
+.footer {
+  background-color: $color-blue-dark-footer;
+  display: grid;
+  padding: 20rem 10rem 10rem;
+  grid-template-rows: repeat(2, min-content);
+  gap: 3rem;
+  @media only screen and (max-width: $bp-mobile) {
+    padding: 30rem 8rem 5rem;
+  }
+
+  &__sections {
+    display: grid;
+    grid-template-columns: 35rem repeat(3, min-content) 18rem;
+    justify-content: space-between;
+    gap: 3rem;
+
+    @media only screen and (max-width: $bp-mobile) {
+      grid-template-columns: 1fr;
+    }
+
+    .location {
+      display: flex;
+
+      &__icon {
+        height: 2rem;
+        margin-right: 2rem;
+      }
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        .icon {
+          height: 1.5rem;
+          margin-right: 1.5rem;
+        }
+        .link {
+          font-size: 1.2rem;
+          color: $color-white;
+          font-family: $font-primary;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .list-footer {
+      list-style: none;
+      font-family: $font-secondary;
+      :first-child {
+        margin-bottom: 1rem;
+        font-size: 1.4rem !important;
+        white-space: nowrap;
+      }
+      .item-footer {
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+      }
+
+      @media only screen and (max-width: $bp-mobile) {
+        padding-left: 0;
+      }
+    }
+
+    .icons-soc {
+      display: flex;
+      .icon-social {
+        width: 2rem;
+        height: 2rem;
+        margin-left: 1rem;
+
+        @media only screen and (max-width: $bp-mobile) {
+          margin-left: 0;
+          &:not(:first-child) {
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
